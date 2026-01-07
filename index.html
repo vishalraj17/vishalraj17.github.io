@@ -1,39 +1,40 @@
 <!DOCTYPE html>
 <html lang="en" class="js">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Vishal Raj | Data Analyst</title>
-  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
 </head>
- 
-
 <body>
 
 <header class="hero">
-  <h1>Vishal Raj </h1>
+  <h1>Vishal Raj</h1>
   <p>Data Analyst | Power BI | SQL</p>
 </header>
 
 <section class="about reveal">
   <h2>About Me</h2>
   <p>
-   Data Analyst with 4+ years of experience in data operations, analytics, and reporting. Strong in SQL, Advanced Excel, Python and
-Power BI with hands-on experience analyzing large-scale datasets, building dashboards, and delivering actionable insights.
-Currently working with AI quality and backend data workflows at Amazon, with prior experience in sports analytics and KPI
-reporting.
+    Data Analyst with 4+ years of experience in data operations, analytics, and reporting.
+    Strong in SQL, Advanced Excel, Python and Power BI with hands-on experience analyzing
+    large-scale datasets, building dashboards, and delivering actionable insights.
+    Currently working with AI quality and backend data workflows at Amazon, with prior experience
+    in sports analytics and KPI reporting.
   </p>
 </section>
 
 <section class="skills reveal">
   <h2>Skills</h2>
-  <ul>
-    <li>Power BI</li>
-    <li>DAX</li>
-    <li>SQL</li>
-    <li>Data Modeling</li>
-    <li>Excel</li>
-  </ul>
+  <div class="skill-grid">
+    <span>Power BI</span>
+    <span>DAX</span>
+    <span>SQL</span>
+    <span>Python</span>
+    <span>Data Modeling</span>
+    <span>Excel</span>
+  </div>
 </section>
 
 <section class="projects reveal">
@@ -42,10 +43,8 @@ reporting.
   <div class="project reveal">
     <h3>Power BI Sales Analytics Dashboard</h3>
     <p>
-      Built an interactive sales analytics dashboard in Power BI with KPIs, trends, and
-      product/customer insights. Created DAX measures (Revenue, Orders, AOV) and modeled data
-      using a star schema. Used advanced visuals (Decomposition Tree, Key Influencers, Q&A) for
-      root cause and driver analysis.
+      Built an interactive sales analytics dashboard in Power BI with KPIs, trends,
+      product/customer insights and advanced analytics (Decomposition Tree, Key Influencers, Q&A).
     </p>
     <a href="https://github.com/vishalraj17/powerbi-sales-analytics" target="_blank">View on GitHub</a>
   </div>
@@ -53,15 +52,12 @@ reporting.
   <div class="project reveal">
     <h3>SQL Sales Analysis</h3>
     <p>
-      Designed a relational sales database with 6 normalized tables and foreign key constraints.
-      Wrote 30+ analytical SQL queries using joins, aggregations, subqueries, CTEs, and window
-      functions. Analyzed revenue trends, top customers, and product performance, and optimized
-      schema using DECIMAL and indexing.
+      Designed a relational sales database with 6 normalized tables and wrote 30+ analytical
+      SQL queries using joins, CTEs, and window functions.
     </p>
     <a href="https://github.com/vishalraj17/sql-sales-analysis" target="_blank">View on GitHub</a>
   </div>
 </section>
-
 
 <footer>
   <p>Contact: vishalrljvv@gmail.com</p>
@@ -71,28 +67,27 @@ reporting.
   </p>
 </footer>
 
- <script>
-document.addEventListener("DOMContentLoaded", function () {
-  const reveals = document.querySelectorAll('.reveal');
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const reveals = document.querySelectorAll(".reveal");
 
-  if (!('IntersectionObserver' in window)) {
-    reveals.forEach(el => el.classList.add('active'));
+  if (!("IntersectionObserver" in window)) {
+    reveals.forEach(el => el.classList.add("active"));
     return;
   }
 
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        entry.target.classList.add('active');
+        entry.target.classList.add("active");
         observer.unobserve(entry.target);
       }
     });
   }, { threshold: 0.15 });
 
-  reveals.forEach(reveal => observer.observe(reveal));
+  reveals.forEach(el => observer.observe(el));
 });
 </script>
-
 
 </body>
 </html>
