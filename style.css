@@ -45,11 +45,11 @@ section, .project {
   padding: 24px;
   margin-top: 20px;
   box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
 .project:hover {
-  transform: translateY(-6px);
+  transform: translateY(15px);
   box-shadow: 0 30px 60px rgba(0,0,0,0.6);
 }
 
@@ -103,3 +103,15 @@ footer {
   background: #020617;
   font-size: 0.9em;
 }
+
+.reveal {
+  opacity: 0;
+  transform: translateY(15px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
