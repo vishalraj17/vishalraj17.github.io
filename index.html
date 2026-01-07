@@ -72,7 +72,13 @@ reporting.
 </footer>
 
  <script>
+document.addEventListener("DOMContentLoaded", function () {
   const reveals = document.querySelectorAll('.reveal');
+
+  if (!('IntersectionObserver' in window)) {
+    reveals.forEach(el => el.classList.add('active'));
+    return;
+  }
 
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
@@ -81,14 +87,12 @@ reporting.
         observer.unobserve(entry.target);
       }
     });
-  }, {
-    threshold: 0.15
-  });
+  }, { threshold: 0.15 });
 
-  reveals.forEach(reveal => {
-    observer.observe(reveal);
-  });
+  reveals.forEach(reveal => observer.observe(reveal));
+});
 </script>
+
 
 </body>
 </html>
